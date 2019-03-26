@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Lock | Visitor Authentication</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/visitor.css" rel="stylesheet">
+    <script src="/js/VanillaQR.js"></script>
+  </head>
+  <body>
+    <h1>Smart Lock Visitor Code</h1>
+    <p>
+      This is an example of what a visitor would be presented with to
+      unlock the door.
+    </p>
+    <div id="container"></div>
+    <script>
+      const code_container = document.getElementById('container');
+
+      const params = new URLSearchParams(window.location.search);
+
+      const door_id = params.get("door"), visitor_id = params.get("visitor");
+
+      fetch('http://127.0.0.1:8080/api/visitors/' + door_id + '/' + visitor_id + '/')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          let unlock_key = data['data']['unlock_key'];
+          let qr = new VanillaQR({
+            url: unlock_key,
+            size: 300,
+            colorLight: "#D7D7D7",
+            colorDark: "#292933"
+          });
+          code_container.append(qr.domElement);
+
+          code_text = document.createElement('p')
+          code_text.appendChild(document.createTextNode(unlock_key));
+          code_container.append(code_text);
+        });
+    </script>
+  </body>
+</html>

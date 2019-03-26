@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Lock | Homeowner | Visitors</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/homeowner.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Smart Lock Visitor View</h1>
+    <p>
+      This is an example of what the visitor component view will look for the
+      homeowner.
+      When the user wished to send a visitor code out, they can click on the
+      relevant code and it will be copied to their clipboard.
+    </p>
+    <h2>Visitors</h2>
+    <div id="visitor-input">
+      <input id="visitor-name" type="text" name="name">
+      <div>
+        <input id="visitor-add" type="button" name="submit" value="Add Visitor">
+        <input id="visitor-clear" type="button" name="clear" value="Clear">
+      </div>
+    </div>
+    <ul id="visitor-list"></ul>
+    <script src="/js/homeowner.js"></script>
+  </body>
+</html>

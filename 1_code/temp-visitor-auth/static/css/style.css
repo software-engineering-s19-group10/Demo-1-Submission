@@ -1,0 +1,20 @@
+html {
+  box-sizing: border-box;
+
+  color: rgb(215, 215, 215);
+  background-color: rgb(41, 41, 51);
+}
+
+body {
+  margin: 0 auto;
+
+  width: 60vw;
+  max-width: 900px;
+}
+
+@media (orientation: portrait) {
+  body {
+    width: 96vw;
+    max-width: none;
+  }
+}

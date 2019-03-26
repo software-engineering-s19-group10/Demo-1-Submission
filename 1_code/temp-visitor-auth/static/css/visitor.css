@@ -1,0 +1,20 @@
+#container canvas {
+  display: block;
+
+  margin: 0 auto;
+  padding: 40px 0 0 40px;
+}
+
+#container p {
+  text-align: center;
+
+  /* Sweet hacks :) */
+  font-family: monospace, monospace;
+  font-size: 0.75em;
+}
+
+@media (orientation: portrait) {
+  #container canvas {
+    width: calc(90vw - 40px);
+  }
+}
