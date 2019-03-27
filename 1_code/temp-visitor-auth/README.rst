@@ -12,14 +12,16 @@ Usage:
 
 * Set execution policy to unrestricted.
 
-* $ cd .\GitHub\visitor-demo\
+```
+$ cd .\GitHub\visitor-demo\
 
-* $ py -m venv venv
+$ py -m venv venv
 
-* $ ./venv/Scripts/Activate.ps1
+$ ./venv/Scripts/Activate.ps1
 
-* $ pip install -r requirements.txt
+$ pip install -r requirements.txt
 
-* $ python server.py
+$ python server.py
+```
 
 * Go to http://<...>/homeowner.html
